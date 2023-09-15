@@ -11,7 +11,7 @@ canvas = pygame.display.set_mode((screen_width, screen_width))
 pygame.display.set_caption("Rainbow cube")
 
 # play background music
-mixer.music.load('background.wav')
+mixer.music.load('albert/python_project/rainbow_cube/background.wav')
 mixer.music.play(-1)
 # set snake size
 left = 0
@@ -101,7 +101,7 @@ while not exit:
         if left > (screen_width-width) or left <0 or top > (screen_width-width) or top < 0:
             message("You lost. Thanks for playing Rainbow Cube",(100,100,100))
             pygame.display.update()
-            Death_sound = mixer.Sound('explosion.wav')
+            Death_sound = mixer.Sound('albert/python_project/rainbow_cube/explosion.wav')
             Death_sound.play()
             left = 0
             top = 0
@@ -167,7 +167,7 @@ while not exit:
             snake_head.append((colorR, colorG, colorB))
             snake_list = [snake_head]
             pygame.display.update()
-            Death_sound=mixer.Sound('explosion.wav')
+            Death_sound=mixer.Sound('albert/python_project/rainbow_cube/explosion.wav')
             Death_sound.play()
             break
         # check whether we ate the food
@@ -175,13 +175,13 @@ while not exit:
             print("yummy!!")
             foodx, foody = locate_food(rock_location)
             score +=1
-            food_sound=mixer.Sound('laser.wav')
+            food_sound=mixer.Sound('albert/python_project/rainbow_cube/laser.wav')
             food_sound.play()
         if (fooda>=left and fooda<=(left+width)) and (foodb>=top and foodb<=(top+width)):
             print("yummy!!")
             fooda, foodb = locate_food(rock_location)
             score += 1
-            food_sound=mixer.Sound('laser.wav')
+            food_sound=mixer.Sound('albert/python_project/rainbow_cube/laser.wav')
             food_sound.play()
         clock.tick(30)
 
